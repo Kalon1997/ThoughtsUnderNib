@@ -3,12 +3,14 @@ const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const app = express();
 const path = require("path");
-require("dotenv").config({ path: __dirname + "/config/config.env" });
+// require("dotenv").config({ path: __dirname + "/config/config.env" });
 const user = require('./routes/User.js')
 const cors = require('cors')
 const connection = require('./db')
 connection()
-
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config({ path: __dirname +  "/config/config.env" });
+  }
 const corsConfig = {
     credentials: true,
     origin: true,
