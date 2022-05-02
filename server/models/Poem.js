@@ -15,9 +15,9 @@ const poemSchema = new Mongoose.Schema({
         type:String,
         // required:true
     },
-    // tags:{
-    //     type: [String]
-    // },
+    tags:{
+        type: [String]
+    },
     clipart:{
         type:String
     },
@@ -33,6 +33,14 @@ const poemSchema = new Mongoose.Schema({
     createdByUsername:{
         type:String,
         // required:true
+    },
+    likes:{
+        type: [String],
+        default: []
+    },
+    comments:{
+        type: [String],
+        default: []
     }
 })
 module.exports = Mongoose.model("Poem", poemSchema);
