@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Shizuru&display=swap');
+.wholenav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #3C415C;
+    color: #B4A5A5;
+    justify-content: space-around;
+    height: 3rem;
+}
+.logo{
+    display: flex;
+    font-family: 'Lobster', cursive;
+    text-decoration: double, bolder;
+    font-size: larger; 
+    font-weight: 400px;
+}
+
+.navs{
+    display: flex;
+  
+}
+.btns{
+    display: flex;
+}
+
+.textcolorwhite{
+    color: white;
+}
+a:hover{
+    color: #ffff;
+}
