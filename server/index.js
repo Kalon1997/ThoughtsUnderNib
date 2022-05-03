@@ -27,6 +27,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/v1',user);
 
+
+app.use(express.static(path.join(__dirname, "../client_/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../client_/build/index.html"));
+});
+
+
 app.listen(process.env.PORT, () => {
     console.log(`listening @ ${process.env.PORT}`)
 })
