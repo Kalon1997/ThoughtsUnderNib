@@ -9,7 +9,7 @@ export const getAllPoemsAction = (pageNum) => async (dispatch) => {
         // {withCredentials: true}
         axios.defaults.withCredentials = true
         const { data } = await axios.get(
-            `http://localhost:5000/api/v1/getPoems?page=${pageNum}`,
+            `/api/v1/getPoems?page=${pageNum}`,
             {
               headers: {
                 "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export const getMyPoemsAction = () => async (dispatch) => {
       // {withCredentials: true}
       axios.defaults.withCredentials = true
       const { data } = await axios.get(
-          "http://localhost:5000/api/v1/me",
+          "/api/v1/me",
           {
             headers: {
               "Content-Type": "application/json",

@@ -10,7 +10,7 @@ export const registerAction = (username, email, password) => async (dispatch) =>
         // {withCredentials: true}
         axios.defaults.withCredentials = true
         const { data } = await axios.post(
-            "http://localhost:5000/api/v1/register",
+            "/api/v1/register",
             { username, email, password },
             {
               headers: {
@@ -42,7 +42,7 @@ export const loginAction = (email, password) => async (dispatch) => {
       // {withCredentials: true}
       axios.defaults.withCredentials = true
       const { data } = await axios.post(
-          "http://localhost:5000/api/v1/login",
+          "/api/v1/login",
           { email, password },
           {
             headers: {
@@ -139,7 +139,7 @@ export const loadUserAction = () => async (dispatch) => {
       // {withCredentials: true}
       axios.defaults.withCredentials = true
       const { data } = await axios.get(
-          "http://localhost:5000/api/v1/myProfile",
+          "/api/v1/myProfile",
           {
             headers: {
               "Content-Type": "application/json",
@@ -168,7 +168,7 @@ export const logoutAction = () => async (dispatch) => {
       // {withCredentials: true}
       axios.defaults.withCredentials = true
       await axios.get(
-          "http://localhost:5000/api/v1/logout",
+          "/api/v1/logout",
           {
             headers: {
               "Content-Type": "application/json",
