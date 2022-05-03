@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4ebc2441.css",
+    "main.js": "/static/js/main.40d025d7.js",
+    "static/js/787.bf391c7c.chunk.js": "/static/js/787.bf391c7c.chunk.js",
+    "static/media/bluebird.jpg": "/static/media/bluebird.6d0ec48eb3ec4bb17c21.jpg",
+    "static/media/headphone.jpg": "/static/media/headphone.0596591214cbae74b29b.jpg",
+    "static/media/shine.jpeg": "/static/media/shine.05da288e4e05fc4ed4b7.jpeg",
+    "static/media/dive.jpeg": "/static/media/dive.77e51054dd921d999a84.jpeg",
+    "index.html": "/index.html",
+    "static/media/cornered-stairs.svg": "/static/media/cornered-stairs.c2a133a7129a200fc006.svg",
+    "main.4ebc2441.css.map": "/static/css/main.4ebc2441.css.map",
+    "main.40d025d7.js.map": "/static/js/main.40d025d7.js.map",
+    "787.bf391c7c.chunk.js.map": "/static/js/787.bf391c7c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ebc2441.css",
+    "static/js/main.40d025d7.js"
+  ]
+}
