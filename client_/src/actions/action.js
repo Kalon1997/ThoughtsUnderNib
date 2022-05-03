@@ -76,7 +76,7 @@ export const forgotPasswordAction = (email) => async (dispatch) => {
       // {withCredentials: true}
       // axios.defaults.withCredentials = true
       const { data } = await axios.post(
-          "http://localhost:5000/api/v1/forgot/password",
+          "/api/v1/forgot/password",
           { email },
           {
             headers: {
@@ -108,7 +108,7 @@ export const resetPasswordAction = (password, resetToken) => async (dispatch) =>
       // {withCredentials: true}
       // axios.defaults.withCredentials = true
         await axios.put(
-          `http://localhost:5000/api/v1/password/reset/${resetToken}`,
+          `/api/v1/password/reset/${resetToken}`,
           {password},
           {
             headers: {

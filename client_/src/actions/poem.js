@@ -71,7 +71,7 @@ export const createPoemAction = (title, body, clipart, tags) => async (dispatch)
       // {withCredentials: true}
       axios.defaults.withCredentials = true
       const { data } = await axios.post(
-          "http://localhost:5000/api/v1/createPoem",
+          "/api/v1/createPoem",
           {
             title, body, clipart, tags
           },
@@ -124,7 +124,7 @@ export const SaveEditedPoemAction = (id, title, body, clipart, tags) => async (d
       // {withCredentials: true}
       axios.defaults.withCredentials = true
       const { data } = await axios.put(
-          `http://localhost:5000/api/v1/editPoem/${id}`,
+          `/api/v1/editPoem/${id}`,
           {
             title, body, clipart, tags
           },
@@ -157,7 +157,7 @@ export const DeletePoemAction = (id) => async (dispatch) => {
       // {withCredentials: true}
       axios.defaults.withCredentials = true
       const { data } = await axios.delete(
-          `http://localhost:5000/api/v1/deletePoem/${id}`,
+          `/api/v1/deletePoem/${id}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -186,7 +186,7 @@ export const SearchPoemsByTagsAction = (word) => async (dispatch) => {
       // {withCredentials: true}
       axios.defaults.withCredentials = true
       const { data } = await axios.post(
-          `http://localhost:5000/api/v1/search/`,
+          `/api/v1/search/`,
           {word},
           {
             headers: {
@@ -212,7 +212,7 @@ export const likeDislikePoemAction = (id) => async (dispatch) => {
       type: "LikeDislikeRequest"
     })
     axios.defaults.withCredentials = true;
-    const {data} = await axios.put(`http://localhost:5000/api/v1/likeDislikePoem/${id}`,
+    const {data} = await axios.put(`/api/v1/likeDislikePoem/${id}`,
     {
       headers: {
         "Content-Type": "application/json",
@@ -246,7 +246,7 @@ export const addCommentAction = (id, comment) => async (dispatch) => {
       // {withCredentials: true}
       axios.defaults.withCredentials = true
       const { data } = await axios.put(
-          `http://localhost:5000/api/v1/addComment/${id}`,
+          `/api/v1/addComment/${id}`,
           {
             comment
           },

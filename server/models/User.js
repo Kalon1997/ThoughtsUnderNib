@@ -16,10 +16,6 @@ const userSchema = new Mongoose.Schema({
         required:true,
         select: false
     },
-    // resetLink:{
-    //     data: String,
-    //     default: ''
-    // },
     resetPasswordToken: String,
     resetPasswordExpire: Date,
 })

@@ -16,7 +16,6 @@ exports.registerUser = async (req, res) => {
         if(!username || !email || !password){
             return res.status(400).json({message: "Fill the fields."})
         }
-        //const newuser = await new User(req.body).save();
         user = await User.create({
             username, email, password
         })
@@ -131,13 +130,10 @@ exports.forgotPassword = async (req, res) => {
     const resetPasswordToken = user.getResetPasswordToken();
 
     await user.save();
-    // console.log(req.protocol)
-    const resetUrl = `http://localhost:3000/password/reset/${resetPasswordToken}`;
-    // const resetUrl = `${req.protocol}://${req.get(
-    //   "host"
-    // )}/password/reset/${resetPasswordToken}`;
-
-    // const resetUrl = `http://localhost:3000/password/reset/${resetPasswordToken}`;
+    const resetUrl = `${req.protocol}://${req.get(
+      "host"
+    )}/password/reset/${resetPasswordToken}`;
+    
     const message = `Reset Your Password by clicking on the link below: \n\n ${resetUrl}`;
 
     try {

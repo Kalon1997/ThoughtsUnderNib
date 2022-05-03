@@ -1,11 +1,4 @@
 const Mongoose = require('mongoose')
-// const poemSchema = new Mongoose.Schema({
-//     title: String,
-//     createdAt: {
-//                 type: Date,
-//                 default: new Date(),
-//             }
-// });
 const poemSchema = new Mongoose.Schema({
     title:{
         type:String,
@@ -13,7 +6,7 @@ const poemSchema = new Mongoose.Schema({
     },
     body:{
         type:String,
-        // required:true
+
     },
     tags:{
         type: [String]
@@ -28,11 +21,11 @@ const poemSchema = new Mongoose.Schema({
     createdById:{
         type:Mongoose.Schema.ObjectId,
         ref:"User",
-        // required:true
+
     },
     createdByUsername:{
         type:String,
-        // required:true
+
     },
     likes:{
         type: [String],

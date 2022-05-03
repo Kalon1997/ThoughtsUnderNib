@@ -43,17 +43,6 @@ exports.getPoems = async (req, res) => {
 }
 
 
-
-// exports.getPoems = async (req, res) => { 
-//     try {
-//         const poems = await Poem.find();
-//         res.status(200).json({success: true,
-//             poems});
-//     } catch (err) {
-//         res.status(500).json({ message:'unknown error' });
-//     }
-// }
-
 exports.getMyPoems = async (req, res) => { 
     try {
        const mypoemlist = await Poem.find({createdById : req.user._id});
@@ -130,7 +119,6 @@ exports.searchPoemByTags = async (req, res) => {
     try {
         var {word} = req.body;
         var arr = (word.split(',').join(' ').split(';').join(' ').split('#').join(' ')).split(' ')
-        // console.log(arr[0]+arr[1])
         var allTagSearchedPoems = await Poem.find({
             'tags': { $in: arr} 
         })
