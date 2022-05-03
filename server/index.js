@@ -8,9 +8,9 @@ const user = require('./routes/User.js')
 const cors = require('cors')
 const connection = require('./db')
 connection()
-// if (process.env.NODE_ENV !== "production") {
-//     require("dotenv").config({ path: __dirname +  "server/config/config.env" });
-//   }
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config({ path: __dirname +  "server/config/config.env" });
+  }
 const corsConfig = {
     credentials: true,
     origin: true,
@@ -27,12 +27,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/v1',user);
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client_/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client_/build/index.html"));
+  });
+}
 
-app.use(express.static(path.join(__dirname, "../client_/build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client_/build/index.html"));
-});
 
 
 app.listen(process.env.PORT, () => {
